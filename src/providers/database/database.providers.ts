@@ -5,7 +5,7 @@ export const databaseProviders = [
   {
     provide: databaseConnection,
     useFactory: (): Promise<typeof mongoose> =>
-      process.env.NODE_ENV === 'development'
+      process.env.NODE_ENV === 'dev'
         ? mongoose.connect(process.env.DB_DEV_URI)
         : mongoose.connect(process.env.DB_PROD_URI),
   },
