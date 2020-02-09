@@ -8,6 +8,8 @@ import {
   Body,
   ValidationPipe,
   UsePipes,
+  Delete,
+  Param,
 } from '@nestjs/common';
 
 @Controller('sitters')
@@ -17,6 +19,11 @@ export class SittersController {
   @Get()
   getAllSitters(): Sitter[] {
     return this.sittersService.getAllSitters();
+  }
+
+  @Delete('/:id')
+  deleteSitterbyId(@Param('id') id: string): void {
+    return this.sittersService.deleteSitterById(id);
   }
 
   @Post()

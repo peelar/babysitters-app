@@ -11,12 +11,22 @@ export class SittersService {
     return this.sitters;
   }
 
+  getSitterById(id: string): Sitter {
+    return this.sitters.find(el => el.id === id);
+  }
+
+  deleteSitterById(id: string): void {
+    const found = this.getSitterById(id);
+    this.sitters.filter(sitter => sitter.id !== found.id);
+  }
+
   createSitter(createSitterDto: CreateSitterDto): Sitter {
     const sitter: Sitter = {
       id: uuid(),
       ...createSitterDto,
     };
 
+    this.sitters.push(sitter);
     return sitter;
   }
 }
