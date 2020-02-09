@@ -20,10 +20,9 @@ export class SittersService {
   //   return this.sittersModel.find(el => el.id === id);
   // }
 
-  // deleteSitterById(id: string): void {
-  //   const found = this.getSitterById(id);
-  //   this.sittersModel.filter(sitter => sitter.id !== found.id);
-  // }
+  deleteSitterById(id: string): void {
+    this.sittersModel.findByIdAndRemove({ _id: id });
+  }
 
   async createSitter(createSitterDto: CreateSitterDto): Promise<Sitter> {
     const createdSitter = new this.sittersModel(createSitterDto);

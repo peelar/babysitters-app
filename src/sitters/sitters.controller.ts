@@ -21,10 +21,10 @@ export class SittersController {
     return this.sittersService.getAllSitters();
   }
 
-  // @Delete('/:id')
-  // deleteSitterbyId(@Param('id') id: string): void {
-  //   return this.sittersService.deleteSitterById(id);
-  // }
+  @Delete('/:id')
+  deleteSitterbyId(@Param('id') id: string): void {
+    return this.sittersService.deleteSitterById(id);
+  }
 
   @Post()
   @UsePipes(ValidationPipe)
