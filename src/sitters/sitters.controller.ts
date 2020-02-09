@@ -21,6 +21,11 @@ export class SittersController {
     return this.sittersService.getAllSitters();
   }
 
+  @Get('/:id')
+  getSitter(@Param('id') id: string): Promise<Sitter> {
+    return this.sittersService.getSitterById(id);
+  }
+
   @Delete('/:id')
   deleteSitterbyId(@Param('id') id: string): void {
     return this.sittersService.deleteSitterById(id);

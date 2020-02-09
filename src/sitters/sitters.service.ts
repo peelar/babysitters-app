@@ -1,7 +1,6 @@
 import { CreateSitterDto } from './dto/create-sitter.dto';
 import { Injectable, Inject } from '@nestjs/common';
 import { Sitter } from './sitters.model';
-import * as uuid from 'uuid/v1';
 import { sitterModel } from '../constants';
 import { Model } from 'mongoose';
 
@@ -16,9 +15,9 @@ export class SittersService {
     return this.sittersModel.find().exec();
   }
 
-  // getSitterById(id: string): Sitter {
-  //   return this.sittersModel.find(el => el.id === id);
-  // }
+  getSitterById(id: string): Promise<Sitter> {
+    return this.sittersModel.findById(id).exec();
+  }
 
   deleteSitterById(id: string): void {
     this.sittersModel.findByIdAndRemove({ _id: id });
