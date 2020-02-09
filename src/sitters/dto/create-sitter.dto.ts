@@ -6,4 +6,5 @@ export class CreateSitterDto {
 
   @IsNotEmpty()
   last_name: string;
+  gender: string;
 }
