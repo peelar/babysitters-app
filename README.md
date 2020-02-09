@@ -1,7 +1,6 @@
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-[Mongoose](https://mongoosejs.com/)
+Monorepo for Babysitters app built with Nest-js, React and React Native.
 
 ## Prerequisites
 
