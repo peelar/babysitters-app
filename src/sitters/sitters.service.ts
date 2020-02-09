@@ -2,7 +2,7 @@ import { CreateSitterDto } from './dto/create-sitter.dto';
 import { Injectable, Inject } from '@nestjs/common';
 import { Sitter } from './sitters.model';
 import * as uuid from 'uuid/v1';
-import { sitterModel } from 'src/constants';
+import { sitterModel } from '../constants';
 import { Model } from 'mongoose';
 
 @Injectable()
