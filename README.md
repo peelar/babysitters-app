@@ -22,7 +22,7 @@ $ brew services start mongodb-community@4.2
 ## Running the app
 
 ```bash
-# developmen
+# development
 $ npm run start
 
 # watch mode
